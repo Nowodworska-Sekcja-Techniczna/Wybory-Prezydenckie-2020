@@ -1,11 +1,9 @@
 \makeatletter
 \renewcommand\appendix{\par
-  \setcounter{appendix}{0}
   \setcounter{section}{0}%
   \setcounter{subsection}{0}%
   \gdef\thesection{\@Alph\c@section}}
 \newcommand\unappendix{\par
-  \setcounter{appendix}{0}
   \setcounter{section}{0}%
   \setcounter{subsection}{0}%
   \gdef\thesection{\@arabic\c@section}}

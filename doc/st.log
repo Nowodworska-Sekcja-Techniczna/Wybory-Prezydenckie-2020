@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.11.7)  18 NOV 2020 01:33
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.11.7)  18 NOV 2020 12:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -955,20 +955,7 @@ LaTeX Info: Redefining \nameref on input line 20.
 \@outlinefile=\write4
 \openout4 = `st.out'.
 
- (./con/student.tex
-
-! LaTeX Error: No counter 'appendix' defined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.7 \unappendix
-               
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
+ (./content/student.tex
 LaTeX Font Info:    Font shape `TU/OldStandard(0)/m/n' will be
 (Font)              scaled to size 20.74pt on input line 10.
 Requested font "[OldStandard-Regular.otf]/OT:script=latn;language=dflt;mapping=
@@ -979,6 +966,7 @@ LaTeX Font Info:    Font shape `TU/OldStandard(0)/m/sc' will be
 Requested font "[OldStandard-Regular.otf]/OT:script=latn;language=dflt;+smcp;ma
 pping=tex-text;" at 20.74pt
  -> /usr/share/texmf/fonts/opentype/OldStandard-Regular.otf
+
 ! Misplaced \noalign.
 \hline ->\noalign 
                   {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
@@ -1070,48 +1058,17 @@ LaTeX Font Info:    Font shape `TU/OldStandard(0)/m/sc' will be
 Requested font "[OldStandard-Regular.otf]/OT:script=latn;language=dflt;+smcp;ma
 pping=tex-text;" at 12.0pt
  -> /usr/share/texmf/fonts/opentype/OldStandard-Regular.otf
-! Undefined control sequence.
-\f@nch@ocf ->\scshape \empg 
-                            {Wybory samorządowe 2020/2021}\strut 
-l.54 \newpage
-             
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
+LaTeX Font Info:    Font shape `TU/OldStandard(0)/m/scit' will be
+(Font)              scaled to size 12.0pt on input line 54.
+Requested font "[OldStandard-Italic.otf]/OT:script=latn;language=dflt;+smcp;map
+ping=tex-text;" at 12.0pt
+ -> /usr/share/texmf/fonts/opentype/OldStandard-Italic.otf
 [1
 
 ]
-
-! LaTeX Error: No counter 'appendix' defined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.58 \appendix
-              
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
 Requested font "[lmmono12-regular]:" at 12.0pt
  -> /usr/share/texmf/fonts/opentype/public/lm/lmmono12-regular.otf
-)
-! Undefined control sequence.
-\f@nch@ocf ->\scshape \empg 
-                            {Wybory samorządowe 2020/2021}\strut 
-l.26 \end{document}
-                   
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[2]
+) [2]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 26.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 26.
  (./st.aux)
@@ -1122,11 +1079,11 @@ Package rerunfilecheck Info: File `st.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 26.
  ) 
 Here is how much of TeX's memory you used:
- 23727 strings out of 481723
- 474780 string characters out of 5935921
- 763946 words of memory out of 5000000
+ 23728 strings out of 481723
+ 474896 string characters out of 5935921
+ 763917 words of memory out of 5000000
  40309 multiletter control sequences out of 15000+600000
- 536722 words of font info for 59 fonts, out of 8000000 for 9000
+ 536730 words of font info for 60 fonts, out of 8000000 for 9000
  56 hyphenation exceptions out of 8191
  63i,14n,85p,416b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
 
