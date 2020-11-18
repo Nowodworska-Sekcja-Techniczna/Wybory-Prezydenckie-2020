@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+
+% Define packages
+\input{style/using.tex}
+
+% Define page margins
+\geometry{
+  a4paper,
+  margin=20mm,
+  left=15mm,
+  right=25mm,
+  top=5mm,
+}
+
+% Define a warning border
+\input{style/foot}
+
+% Special appendix commands to rester the counter
+\input{style/apdx}
+
+\begin{document}
+  % Warning border
+  \input{style/border}
+  \vspace{-0.5cm}
+
+
+  \begin{center}
+
+    \LARGE{\scshape{TYLKO DLA PRZEWODNICZĄCYCH}}
+    \vspace{0.2cm}
+    \hline
+    \vspace{0.5cm}
+
+    \normalsize
+
+    \input{con/abstract}
+
+  \end{center}
+  
+  \input{con/dane} 
+
+  \input{con/pzd}
+
+  \input{con/format}
+
+  \clearpage
+
+  \input{style/border}
+
+  \input{con/kontakt}
+
+  \input{con/przyklad}
+
+  \clearpage
+
+  \input{con/clear}
+
+  \clearpage
+
+  % UCZNIOWIE %
+  \setcounter{footnote}{0}
+  \input{con/student}
+
+\end{document}
