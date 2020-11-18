@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.11.7)  18 NOV 2020 12:42
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.11.7)  18 NOV 2020 20:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1059,7 +1059,10 @@ Requested font "cmex7" at 7.0pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 Requested font "cmex7" at 5.0pt
  -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
-) (./content/pzd.tex) (./content/format.tex
+) (./content/pzd.tex
+Requested font "[lmmono12-regular]:" at 12.0pt
+ -> /usr/share/texmf/fonts/opentype/public/lm/lmmono12-regular.otf
+) (./content/format.tex
 LaTeX Font Info:    Font shape `TU/OldStandard(0)/b/n' will be
 (Font)              scaled to size 12.0pt on input line 3.
 Requested font "[OldStandard-Bold.otf]/OT:script=latn;language=dflt;mapping=tex
@@ -1074,10 +1077,7 @@ pping=tex-text;" at 12.0pt
  [1
 
 ] (./style/border.tex)
-(./content/kontakt.tex
-Requested font "[lmmono12-regular]:" at 12.0pt
- -> /usr/share/texmf/fonts/opentype/public/lm/lmmono12-regular.otf
-) (./content/przyklad.tex
+(./content/kontakt.tex) (./content/przyklad.tex
 Requested font "[lmmono8-regular]:" at 6.0pt
  -> /usr/share/texmf/fonts/opentype/public/lm/lmmono8-regular.otf
 LaTeX Font Info:    Font shape `TU/OldStandard(0)/m/it' will be
@@ -1100,15 +1100,9 @@ I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
 
-Overfull \hbox (18.2072pt too wide) in paragraph at lines 22--22
-\TU/OldStandard(0)/m/n/12 zdecydowała się na zorganizowanie zdalnych wyborów, o
-raz uczyniła Sekcję Techniczną Samorządu
- []
-
-
-Overfull \hbox (23.27922pt too wide) in paragraph at lines 47--48
-[]\TU/OldStandard(0)/m/n/12 Odmowa od przekazania danych skutkuje usunięciem uc
-znia z listy wyborców na rok 2020/2021. 
+Overfull \hbox (14.6232pt too wide) in paragraph at lines 22--22
+\TU/OldStandard(0)/m/n/12 zdecydowała się na zorganizowanie zdalnych wyborów or
+az uczyniła Sekcję Techniczną Samorządu
  []
 
 LaTeX Font Info:    Font shape `TU/OldStandard(0)/m/scit' will be
@@ -1135,6 +1129,6 @@ Here is how much of TeX's memory you used:
  40434 multiletter control sequences out of 15000+600000
  536770 words of font info for 65 fonts, out of 8000000 for 9000
  56 hyphenation exceptions out of 8191
- 63i,14n,85p,454b,514s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,14n,85p,509b,514s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on main.pdf (5 pages).
