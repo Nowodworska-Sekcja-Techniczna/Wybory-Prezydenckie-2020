@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.11.7)  18 NOV 2020 20:24
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.11.7)  19 NOV 2020 17:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1098,12 +1098,6 @@ l.12   \hline
              
 I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
-
-
-Overfull \hbox (14.6232pt too wide) in paragraph at lines 22--22
-\TU/OldStandard(0)/m/n/12 zdecydowała się na zorganizowanie zdalnych wyborów or
-az uczyniła Sekcję Techniczną Samorządu
- []
 
 LaTeX Font Info:    Font shape `TU/OldStandard(0)/m/scit' will be
 (Font)              scaled to size 12.0pt on input line 54.
