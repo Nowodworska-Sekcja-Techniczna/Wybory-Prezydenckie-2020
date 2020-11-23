@@ -1,0 +1,3 @@
+[submodule "server/nowodworek.rocks"]
+	path = server/static
+	url = https://github.com/Nowodworska-Sekcja-Techniczna/nowodworek.rocks
