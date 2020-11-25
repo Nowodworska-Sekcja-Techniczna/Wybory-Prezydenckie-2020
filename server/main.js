@@ -31,28 +31,111 @@ app.set('view engine', 'mustache');
 app.use (bodyParser.urlencoded( {extended : true} ) );
 app.use(express.static(__dirname + '/static'))
 
-app.get('/wybor', function(req,res) {
+app.post('/oddaj', function(req, res) {
+	if(req.body.verified != 1){
+		res.render('message', {
+			title: 'Nie zaznaczyłeś poprawności danych',
+			message: ':(('
+		})
+		return;
+	}
+
+	if(req.body.token == undefined){
+		res.render('message', {
+			title: 'Nie otrzymaliśmy tokenu',
+			message: ':(('
+		})
+		return;
+	}
+
+		
+	client.query('SELECT * FROM students WHERE token = $1', [req.body.token], (err, resu) => {
+		if(resu.rows[0].choice != null){
+			res.render('message', {
+				title: 'Ten token został już wykorzystany',
+				message: 'Nie możesz oddać głosu jeszcze raz'
+			})
+			return
+		}
+		client.query('UPDATE students SET timest = $1, choice = $2 WHERE token = $3', [(new Date()).toISOString(), req.body.choice, req.body.token], (err, resu) => {
+			if(err == null){
+				res.render('message', {
+					title: 'Udało się!',
+					message: 'Twój głos został oddany! Możesz to potwierdzic otwierając link z maila jeszcze raz.'
+				})
+			} else {
+				console.log(err)
+				res.render('message', {
+					title: 'Nie udało się :((',
+					message: 'Nastąpił niezdefinioway bład skontaktuj się z nami'
+				})
+			}
+		})
+	})
+})
+
+app.get('/oddaj', function(req, res) {
+	res.render('message', {
+		title: 'Nie możesz zGETowac tej storny',
+		message: ':(('
+	})
+})
+
+// Voting
+app.get('/glos', function(req,res) {
 	if(req.query.token != null){
 		client.query('SELECT * FROM students WHERE token = $1', [req.query.token], (err, resu) => {
 			if(err){
-				res.send('Przetważanie tego zapytania się nie powiodło, skontaktuj się z nami :((')
+				res.render('message', {
+					title: 'Bład wewnętrzny',
+					message: 'Przetważanie tego zapytania się nie powiodło, skontaktuj się z nami :(('
+				})
 			} else {
 				if(resu.rows.length != 0){
-					res.render('test', {
-						sex: resu.rows[0].sex,
-						email: resu.rows[0].email,
-						class: resu.rows[0].class,
-						can1: "Filip Gawlik",
-						can2: "Anna Pocztowska",
+					if(resu.rows[0].choice != null){
+						res.render('message', {
+							title: 'Ten token został już wykorzystany',
+							message: 'Nie możesz oddać głosu jeszcze raz'
+						})
+						return
+					}
+					client.query('SELECT * FROM classes WHERE id = $1', [resu.rows[0].class], (err, classres) => {
 
+						var sextex = "";
+						switch(resu.rows[0].sex){
+							case 1:
+								sextex = "Mężczyzna"
+								break
+							case 2:
+								sextex = "Kobieta"
+								break
+							case 3:
+								sextex = "Inna"
+								break
+						}
+
+						res.render('index', {
+							sex: sextex,
+							email: resu.rows[0].email,
+							class: classres.rows[0].name,
+							can1: "Filip Gawlik",
+							can2: "Anna Pocztowska",
+							token: resu.rows[0].token
+						})
 					})
 				} else {
-					res.send('Taki token nie istnieje')
+					res.render('message', {
+						title: 'Fałszywy token',
+						message: 'Taki token nie istnieje'
+					})
 				}
 			}
 		})
 	} else {
-		res.send('To zapytanie nie posiada poprawnego tokenu wyborów')
+		res.render('message', {
+			title: 'Brak tokenu',
+			message: 'To zapytanie nie posiada poprawnego tokenu wyborów'
+		})
 	}
 });
 
