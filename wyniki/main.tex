@@ -1,0 +1,44 @@
+\documentclass[12pt]{article}
+
+% Define packages
+\input{style/using.tex}
+
+% Define page margins
+\geometry{
+  a4paper,
+  left=20mm,
+  right=25mm,
+  top=20mm,
+  bottom=25mm
+}
+
+% Define a warning border
+\input{style/foot}
+
+% Special appendix commands to rester the counter
+\input{style/apdx}
+
+\begin{document}
+  \input{content/clear}
+
+  \clearpage
+  \setcounter{page}{1}
+  %\input{style/border}
+  
+  \input{content/title}
+
+  \input{content/toc}
+  
+  \clearpage
+
+  \input{style/foot}
+  \input{content/1}
+  \input{content/2}
+
+  \clearpage
+
+  \input{content/3}
+
+  \input{content/4}
+  \input{content/a}
+\end{document}

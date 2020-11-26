@@ -1,0 +1,88 @@
+\section{Frekwencja}
+
+\makeatletter
+\newif\ifcircled@makesize
+\tikzset{
+  circled/.code={
+    \tikzset{%
+      /circled/.cd,
+      #1
+    }
+  },
+  circled defaults/.code={
+    \tikzset{%
+      circled={%
+        base=green!30!black,
+        other=gray!30,
+        otherl=red!40!black,
+        sep=2pt,
+        width=2pt,
+      }
+    }
+  },
+  circled size/.style={%
+    circled={%
+      make size=true,
+      size=#1,
+    }
+  },
+  /circled/.cd,
+  base/.store in=\circled@basecol,
+  other/.store in=\circled@othercol,
+  otherl/.store in=\circled@othercoll,
+  sep/.store in=\circled@sep,
+  width/.store in=\circled@width,
+  size/.store in=\circled@size,
+  make size/.is if=circled@makesize,
+  make size=false,
+  size=0pt,
+  /tikz/circled defaults,
+}
+\newlength\charwidth
+\newlength\chwidth
+\newdimen\circled@cw
+\newdimen\circled@cs
+\newcommand*\circled[3][]{%
+  \tikzset{%
+    circled defaults,
+    circled={#1}
+  }%
+  \circled@cw=\circled@width
+  \ifcircled@makesize
+    \circled@cs=\circled@size
+    \setlength\charwidth{\circled@cs}%
+    \addtolength{\charwidth}{.5\circled@cw}% half line width
+    \tikz[baseline=(char.base)]{%
+      \node [text width=\circled@cs, align=center] (char) {\LARGE #2\,\%};
+      \draw [line width=\circled@width, color=\circled@basecol] ([yshift=.5\charwidth]char.center) arc (90:90-#3*3.6:.5\charwidth) coordinate (b);
+      \draw [line width=\circled@width, color=\circled@basecol] ([yshift=.5\charwidth]char.center) arc (90:90-#2*3.6:.5002\charwidth) coordinate (a);
+
+      \draw [line width=\circled@width, color=\circled@othercol] (a) arc (90-#2*3.6:-270:.5001\charwidth);
+      \draw [line width=\circled@width, color=\circled@othercoll] (b) arc (90-#3*3.6:-270:.5001\charwidth);
+    }%
+  \else
+    \settowidth\charwidth{#2\,\%}%
+    \settototalheight\chwidth{#2\,\%}%
+    \ifdim\chwidth>\charwidth\let\charwidth\chwidth\fi
+    \circled@cs=\circled@sep
+    \addtolength{\charwidth}{2\circled@cs+.5\circled@cw}% twice inner sep plus half line width
+    \tikz[baseline=(char.base)]{%
+      \node [inner sep=\circled@sep, circle] (char) {#2\,\%};
+      \draw [line width=\circled@width, color=\circled@basecol] (char.north) arc (90:90-#2*3.6:.5\charwidth) coordinate (a);
+      \draw [line width=\circled@width, color=\circled@othercol] (a) arc (90-#2*3.6:-270:.5\charwidth);
+      \draw [line width=\circled@width, color=\circled@othercol] (b) arc (90-#3*3.6:90-#2*3.6:.5\charwidth);
+    }%
+  \fi
+}
+\makeatother
+
+Tegoroczna frekwencja wyniosła:
+
+\begin{center}
+  \tikzset{circled size=4cm}
+  \noindent\circled[width=4pt]{78.7}{90}
+
+  \[
+    \textcolor{green!30!black}{\blacksquare} \text{Zagłosowało} = 78.7\% \quad \textcolor{gray!30}{\blacksquare} \text{Nie zagłosowało} = 10\% \quad \textcolor{red!40!black}{\blacksquare} \text{Nie przekazało danych} = 11.3\%
+  \]
+\end{center}

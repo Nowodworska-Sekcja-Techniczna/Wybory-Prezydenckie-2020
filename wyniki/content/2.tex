@@ -1,0 +1,31 @@
+\section{Wynik całościowy}
+
+Wynik wyborów wygląda następująco:
+
+\begin{center}
+  \pgfplotsset{width=7cm,compat=1.15}
+
+  \begin{tikzpicture}
+    \begin{axis}[
+      title=Wynik,
+      xbar,
+      width=12cm, height=4.5cm, enlarge y limits=0.5,
+      axis on top,
+      xlabel={Głosy},
+      yticklabels={Pocztowska Anna, Gawlik Filip, Nie oddane głosy},
+      ytick=data,
+      nodes near coords, nodes near coords align={horizontal},
+      xmin=0,
+    ]
+    \addplot[fill=main!20!white] coordinates {(400,1) (300,2) (300, 3)};
+    \end{axis}
+  \end{tikzpicture}
+
+\end{center}
+Gratulujemy wygranej i życzymy miłego sprawowania urzędu!
+
+\vfill
+\begin{center}
+  \LARGE \scshape \textcolor{white!30!black}{celowo pozostawione puste}
+\end{center}
+\vfill

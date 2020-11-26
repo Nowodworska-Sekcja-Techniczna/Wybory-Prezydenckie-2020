@@ -1,0 +1,25 @@
+\pagestyle{empty}
+\newgeometry{top=5mm}
+
+\begin{tikzpicture}[remember picture,overlay]
+  \clip (-10, -8) rectangle (30,1);
+  \foreach \x in {-9,-6.3,...,29}{
+    \draw[black, line width=0.6cm, rotate=-45] (\x,-\paperheight) -- ++(0,2*\paperheight);
+    \draw[gray!30!lightgray,line width=0.6cm, rotate=-45] (\x+1.35,-\paperheight) -- ++(0,2*\paperheight);
+  }
+\end{tikzpicture}
+
+\begin{tikzpicture}[remember picture,overlay]
+  \clip (-10, -18) rectangle (30,-30);
+  \foreach \x in {-9,-6.3,...,32}{
+    \draw[black, line width=0.6cm, rotate=-45] (\x,-\paperheight) -- ++(0,2*\paperheight);
+    \draw[gray!30!lightgray,line width=0.6cm, rotate=-45] (\x+1.35,-\paperheight) -- ++(0,2*\paperheight);
+  }
+\end{tikzpicture}
+\begin{center}
+\vfill
+\LARGE \scshape \textcolor{red!30!black}{nie udostępniać przed 18:00}
+\vfill
+\end{center}
+
+\restoregeometry
