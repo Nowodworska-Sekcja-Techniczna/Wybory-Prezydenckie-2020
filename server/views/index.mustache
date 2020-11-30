@@ -1,14 +1,13 @@
-<html lang="en">
-
+<html lang="pl">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Karta głosowania</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/checkout/">
+    <meta name="theme-color" content="#0d091f">
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="assets/img/icon/apple-touch-icon-120x120.png" sizes="120x120">
@@ -17,18 +16,16 @@
     <link rel="icon" href="assets/img/icon/favicon.ico">
     <script src="https://use.fontawesome.com/5d4dad8d42.js"></script>
 
-    <meta name="theme-color" content="#161616">
-
-
     <style>
-        body{
-          color: white;
-          background-color: #04030a;
+        body {
+            color: white;
+            background-color: #0d091f;
         }
 
-        .text-muted{
-          color: #bbbbbb !important;
+        .text-muted {
+            color: #bbbbbb !important;
         }
+
         .bd-placeholder-img {
             font-size: 1.125rem;
             text-anchor: middle;
@@ -47,73 +44,75 @@
         .custom-radio {
             user-select: none;
         }
+
         .footer {
-          text-align: center;
-          width: 100%;
-          height: 5%;
-          line-height: 4%;
-          background-color: #f5f5f5;
+            text-align: center;
+            width: 100%;
+            height: 5%;
+            line-height: 4%;
+            background-color: #f5f5f5;
         }
     </style>
-    <!-- Custom styles for this template -->
 </head>
 
-<body>
-  <div class="d-flex align-items-center flex-row" stlye="height: 100%;">
-    <div class="p-3 container">
-        <div class="py-5 text-center">
-            <img class="d-block mx-auto mb-4" src="/logo.png" alt="" width="100" height="100">
-            <h2>Karta głosowania</h2>
-            <p class="lead">Poniżej znajduje się fomularz pozwalający na oddanie głosu.</p>
-        </div>
-
-        <div class="row">
-            <div class="col-md-4 order-md-2 mb-4">
-                <h4>Zasady</h4>
-                <a class="d-flex justify-content-between align-items-left flex-column text-muted text-decoration-none mt-3">
-                    <div>1. Głos można oddać tylko raz <br/> 
-                    2. Token zostaje inwalidowany po oddaniu głosu <br/>
-                    3. Wyniki zostaną udostępnione w dniu 08.12.2020 o godzinie 18:00, pod linkiem: <a href="http://nowodworek.rocks/wyniki">link</a></div>
-                </a>
+<body class="d-flex align-items-center justify-content-center flex-row">
+        <div class="p-3 container">
+            <div class="py-5 text-center">
+                <img class="d-block mx-auto mb-4" src="/logo.png" alt="" width="100" height="100">
+                <h2>Karta głosowania</h2>
+                <p class="lead">Poniżej znajduje się fomularz pozwalający na oddanie głosu.</p>
             </div>
-            <div class="col-md-8 order-md-1">
-                <h4 class="mb-3">Dane</h4>
-                <form action="/oddaj" method="post">
-                    <div class="row justify-content-center">
-                        <div class="alert alert-warning col-md-6 mb-5 text-center">
-                            <p for="firstName">Upewnij się, że poniższe dane są prawidłowe:<br/>
-                            Klasa: <b>{{class}}</b>, Płeć: <b>{{sex}}</b> <br/>
-                            Email: <b>{{email}}</b></p>
-                            <input type="checkbox" id="same-address" name="verified" value="1" required>
-                            <label for="same-address">Zgadza się</label>
+
+            <div class="row">
+                <div class="col-md-4 order-md-2 mb-4">
+                    <h4>Zasady</h4>
+                    <div class="d-flex justify-content-between align-items-left flex-column text-muted text-decoration-none mt-3">
+                        <a>1. Głos można oddać tylko raz</a>
+                        <a>2. Token zostaje inwalidowany po oddaniu głosu </a>
+                        <a>3. Wyniki zostaną udostępnione w dniu 08.12.2020 o godzinie 18:00 pod <a href="http://nowodworek.rocks/wyniki">poniższym linkiem</a>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-8 order-md-1">
+                    <h4 class="mb-3">Dane</h4>
+                    <form action="/oddaj" method="post">
+                        <div class="row justify-content-center">
+                            <div class="alert alert-warning col-md-6 mb-5 text-center">
+                                <p for="firstName">Upewnij się, że poniższe dane są prawidłowe:<br />
+                                    Klasa: <b>{{class}}</b>, Płeć: <b>{{sex}}</b> <br />
+                                    Email: <b>{{email}}</b></p>
+                                <input type="checkbox" id="same-address" name="verified" value="1" required>
+                                <label for="same-address">Zgadza się</label>
+                            </div>
                         </div>
-                    </div>
 
-		    <input style="display: none;" type="text" id="token" name="token" value="{{token}}">
-                    <h4 class="mb-3">Głos</h4>
+                        <input style="display: none;" type="text" id="token" name="token" value="{{token}}">
+                        <h4 class="mb-3">Głos</h4>
 
-                    <div class="d-block my-3">
-			<input type="radio" id="can1" name="choice" value="1" required>
-			<label for="can1">{{can1}}</label><br>
-			<input type="radio" id="can2" name="choice" value="2" required>
-			<label for="can2">{{can2}}</label><br>
-                    </div>
-                    <hr style="margin: 1rem 0 2rem 0;">
-                    <button class="btn btn-primary btn-lg btn-block" type="submit">Oddaj głos</button>
-                </form>
+                        <div class="d-block my-3">
+                            <input type="radio" id="can1" name="choice" value="1" required>
+                            <label for="can1">{{can1}}</label><br>
+                            <input type="radio" id="can2" name="choice" value="2" required>
+                            <label for="can2">{{can2}}</label><br>
+                        </div>
+                        <hr style="margin: 1rem 0 2rem 0;">
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Oddaj głos</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row pt-5 text-center text-muted justify-content-center" style="width: 100%;">
+                <span>Courtesy of Mikołaj Gazeel, Jakub Bubak, Miłosz Łagan<br />
+                    Made with <i style="color: red;" class="fa fa-heart"></i> by Nowodworek Tech</span>
             </div>
         </div>
-        
-        <div class="row pt-5 text-center text-muted justify-content-center" style="width: 100%;">
-          <span>Courtesy of Mikołaj Gazeel, Jakub Bubak, Miłosz Łagan<br/>
-            Made with <i style="color: red;" class="fa fa-heart"></i>  by nowodworek tech</span>
-        </div>
-    </div>
-  </div>
     <!-- Nie mam pojecia jak chcesz to zrobić ale niech działa -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+    </script>
 
 </body>
-
 </html>
