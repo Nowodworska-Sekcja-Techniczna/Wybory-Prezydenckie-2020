@@ -1,0 +1,3 @@
+#! /usr/bin/fish
+
+sudo journalctl -f --output cat -u wybory.service

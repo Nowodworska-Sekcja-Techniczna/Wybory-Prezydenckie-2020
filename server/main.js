@@ -33,12 +33,12 @@ client.connect()
 
 postgres.debug('postgres client has estabilished a connection')
 
-//var privateKey  = fs.readFileSync('/opt/keys/privkey.pem', 'utf8')
-//var certificate = fs.readFileSync('/opt/keys/fullchain.pem', 'utf8')
+var privateKey  = fs.readFileSync('/opt/keys/privkey.pem', 'utf8')
+var certificate = fs.readFileSync('/opt/keys/fullchain.pem', 'utf8')
 
 postgres.info('private keys have been sucesfully loaded')
 
-//var credentials = {key: privateKey, cert: certificate};
+var credentials = {key: privateKey, cert: certificate};
 var express = require('express')
 var app = express()
 
@@ -96,8 +96,7 @@ app.post('/oddaj', function(req, res) {
 			})
 			return
 		}
-
-		if(req.body.choice != 1 || req.body.choice != 2){
+		if(req.body.choice != '1' && req.body.choice != '2'){
 			htserver.warn('token ' + req.body.token + ' tried to cheat and vote for a non existant candiadate, throwing error')
 			res.render('message', {
 				title: 'Taki kandydat nie istnieje',
@@ -107,7 +106,7 @@ app.post('/oddaj', function(req, res) {
 		}
 
 		postgres.debug('full vote acceppted running UPDATE')
-		client.query('UPDATE students SET timest = $1, choice = $2 WHERE token = $3', [(new Date()).toISOString(), req.body.choice, req.body.token], (err, resu) => {
+		client.query('UPDATE students SET timest = $1, choice = $2 WHERE token = $3', [(new Date()).toISOString(), req.body.choice, req.body.token], (err, resub) => {
 			if(err == null){
 				htserver.info(resu.rows[0].email + ' successfully voted')
 				res.render('message', {
@@ -130,7 +129,7 @@ app.get('/oddaj', function(req, res) {
 	htserver.debug('recieved get on pusher from ' + req.ip + ' with user agent: ' + req.headers['user-agent'])
 	htserver.warn('pusher can\'t be get displaying error')
 	res.render('message', {
-		title: 'Nie możesz zGETowac tej storny',
+		title: 'Nie możesz zGETowac tej strony',
 		message: ':(('
 	})
 })
@@ -150,6 +149,7 @@ app.get('/glos', function(req,res) {
 			} else {
 				if(resu.rows.length != 0){
 					if(resu.rows[0].choice != null){
+						postgres.warn(req.ip + ' tried to cheat and vote again')
 						res.render('message', {
 							title: 'Ten token został już wykorzystany',
 							message: 'Nie możesz oddać głosu jeszcze raz'
@@ -202,15 +202,15 @@ app.get('/glos', function(req,res) {
 
 //The 404 Route (ALWAYS Keep this as the last route)
 app.get('*', function(req, res){
-  htserver.warn('someone tried to access 404')
   res.status(404).render('message', {
 	title: 'Trafiłeś tam gdzie diabeł mówi dobranoc',
-	message: ''
-	})
+	message: 'Błąd 404'
+  })
 });
 
 var httpServer = http.createServer(app)
-//var httpsServer = https.createServer(credentials, app)
+var httpsServer = https.createServer(credentials, app)
 
+htserver.info('server started all config done')
 httpServer.listen(80)
-//httpsServer.listen(443)
+httpsServer.listen(443)
