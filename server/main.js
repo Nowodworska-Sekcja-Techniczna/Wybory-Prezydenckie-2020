@@ -177,8 +177,8 @@ app.get('/glos', function(req,res) {
 							sex: sextex,
 							email: resu.rows[0].email,
 							class: classres.rows[0].name,
-							can1: "Filip Gawlik",
-							can2: "Anna Pocztowska",
+							can1: "Pocztowska Anna",
+							can2: "Gawlik Filip",
 							token: resu.rows[0].token
 						})
 					})
