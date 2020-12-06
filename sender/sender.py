@@ -36,7 +36,7 @@ finally:
         connection.close()
 
 #---------- sending emails.
-print(receivers_data)
+#print(receivers_data)
 sender_email = 'nowodworek.krk@gmail.com'
 user = 'nowodworek.krk@gmail.com'
 password =  'x74rC5jtuCAJUb7'
@@ -44,8 +44,8 @@ password =  'x74rC5jtuCAJUb7'
 for tup in receivers_data:
     if(tup[3] != None):
         continue
-    #if(tup[1] != 'szwandaw@gmail.com'):
-    #    continue
+    if(tup[1] != '22h39@tutanota.com'):
+        continue
 
     message = MIMEMultipart('alternative')
     message['Subject'] = 'Nowodworskie Wybory Prezydenckie 2020/21'

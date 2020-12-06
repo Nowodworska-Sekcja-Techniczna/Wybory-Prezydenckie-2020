@@ -175,7 +175,7 @@ app.get('/glos', function(req,res) {
 						veserver.info('rendering frontend')
 						res.render('index', {
 							sex: sextex,
-							email: resu.rows[0].email,
+							//email: resu.rows[0].email,
 							class: classres.rows[0].name,
 							can1: "Pocztowska Anna",
 							can2: "Gawlik Filip",
