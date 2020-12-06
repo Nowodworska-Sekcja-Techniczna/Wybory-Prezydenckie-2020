@@ -1,146 +1,78 @@
 \section{Rozbicie}
 
+\newcommand{\classplot}[5]{
+
+  \begin{tikzpicture}
+    \begin{axis}[
+      title=#1,
+      xbar,
+      width=14cm, height=4cm, enlarge y limits=0.5,
+      legend style={at={(0.5,-0.50)},anchor=north,legend columns=-1},
+      axis on top,
+      xlabel={Głosy},
+      yticklabels={Przeznaczenie},
+      ytick=data,
+      %nodes near coords, nodes near coords align={horizontal},
+      %stack plots=x,
+      xmin=0,
+    ]
+      \addplot[fill=fourth!30!white] coordinates {(#2,1)};
+      \addplot[fill=main!30!white] coordinates {(#3,1)};
+      \addplot[fill=second!30!white] coordinates {(#4,1)};
+      \addplot[fill=third!30!white] coordinates {(#5,1)};
+      \legend{Brak danych,Brak głosu,Pocztowska Anna, Gawlik Filip};
+    \end{axis}
+  \end{tikzpicture}
+}
+
+\newcommand{\yearplot}[5]{
+
+  \begin{tikzpicture}
+    \begin{axis}[
+      title=#1,
+      xbar,
+      width=14cm, height=3cm, enlarge y limits=0.5,
+      legend style={at={(0.5,-0.90)},anchor=north,legend columns=-1},
+      axis on top,
+      xlabel={Głosy},
+      yticklabels={Przeznaczenie},
+      bar width = 0.15cm,
+      ytick=data,
+      %nodes near coords, nodes near coords align={horizontal},
+      %stack plots=x,
+      xmin=0,
+    ]
+      \addplot[fill=fourth!30!white] coordinates {(#2,1)};
+      \addplot[fill=main!30!white] coordinates {(#3,1)};
+      \addplot[fill=second!30!white] coordinates {(#4,1)};
+      \addplot[fill=third!30!white] coordinates {(#5,1)};
+      \legend{Brak danych,Brak głosu,Pocztowska Anna, Gawlik Filip};
+    \end{axis}
+  \end{tikzpicture}
+}
+
 \subsection{Profile}
 
 \subsubsection{Mat-fiz-inf}
 
-\begin{center}
-  \pgfplotsset{width=7cm,compat=1.15}
-
-  \begin{tikzpicture}
-    \begin{axis}[
-      title=Klasy Matematyczno-fizyczno-informatyczne,
-      xbar,
-      width=14cm, height=3cm, enlarge y limits=0.5,
-      legend style={at={(0.5,-0.90)},anchor=north,legend columns=-1},
-      axis on top,
-      xlabel={Głosy},
-      yticklabels={Przeznaczenie},
-      ytick=data,
-      %nodes near coords, nodes near coords align={horizontal},
-      stack plots=x,
-      xmin=0,
-    ]
-      \addplot[fill=fourth!30!white, bar shift=0pt] coordinates {(20,1)};
-      \addplot[fill=main!30!white, bar shift=0pt] coordinates {(7,1)};
-      \addplot[fill=second!30!white, bar shift=0pt] coordinates {(15,1)};
-      \addplot[fill=third!30!white, bar shift=0pt] coordinates {(15,1)};
-      \legend{Brak danych,Brak głosu,Pocztowska Anna, Gawlik Filip};
-    \end{axis}
-  \end{tikzpicture}
-\end{center}
+\classplot{Klasy Matematyczno-fizyczno-informatyczne}{78}{95}{24}{22}
 
 \subsubsection{Biol-chem-mat}
 
-\begin{center}
-  \pgfplotsset{width=7cm,compat=1.15}
-
-  \begin{tikzpicture}
-    \begin{axis}[
-      title=Klasy Biologiczno-chemiczno-matematyczne,
-      xbar,
-      width=14cm, height=3cm, enlarge y limits=0.5,
-      legend style={at={(0.5,-0.90)},anchor=north,legend columns=-1},
-      axis on top,
-      xlabel={Głosy},
-      yticklabels={Przeznaczenie},
-      ytick=data,
-      %nodes near coords, nodes near coords align={horizontal},
-      stack plots=x,
-      xmin=0,
-    ]
-      \addplot[fill=fourth!30!white, bar shift=0pt] coordinates {(20,1)};
-      \addplot[fill=main!30!white, bar shift=0pt] coordinates {(7,1)};
-      \addplot[fill=second!30!white, bar shift=0pt] coordinates {(15,1)};
-      \addplot[fill=third!30!white, bar shift=0pt] coordinates {(15,1)};
-      \legend{Brak danych,Brak głosu,Pocztowska Anna, Gawlik Filip};
-    \end{axis}
-  \end{tikzpicture}
-\end{center}
+\classplot{Klasy Biologiczno-chemiczno-matematyczne}{78}{95}{24}{22}
 
 \subsubsection{His-wos-ang}
 
-\begin{center}
-  \pgfplotsset{width=7cm,compat=1.15}
-
-  \begin{tikzpicture}
-    \begin{axis}[
-      title=Klasy Historyczno-Wos-Angielskie,
-      xbar,
-      width=14cm, height=3cm, enlarge y limits=0.5,
-      legend style={at={(0.5,-0.90)},anchor=north,legend columns=-1},
-      axis on top,
-      xlabel={Głosy},
-      yticklabels={Przeznaczenie},
-      ytick=data,
-      %nodes near coords, nodes near coords align={horizontal},
-      stack plots=x,
-      xmin=0,
-    ]
-      \addplot[fill=fourth!30!white, bar shift=0pt] coordinates {(20,1)};
-      \addplot[fill=main!30!white, bar shift=0pt] coordinates {(7,1)};
-      \addplot[fill=second!30!white, bar shift=0pt] coordinates {(15,1)};
-      \addplot[fill=third!30!white, bar shift=0pt] coordinates {(15,1)};
-      \legend{Brak danych,Brak głosu,Pocztowska Anna, Gawlik Filip} 
-    \end{axis}
-  \end{tikzpicture}
-\end{center}
+\classplot{Klasy Historyczno-Wos-Angielskie}{78}{95}{24}{22}
 
 \subsubsection{Mat-geo-ang}
 
-\begin{center}
-  \pgfplotsset{width=7cm,compat=1.15}
-
-  \begin{tikzpicture}
-    \begin{axis}[
-      title=Klasy Matematyczno-Geograficzno-Angielskie,
-      xbar,
-      width=14cm, height=3cm, enlarge y limits=0.5,
-      legend style={at={(0.5,-0.90)},anchor=north,legend columns=-1},
-      axis on top,
-      xlabel={Głosy},
-      yticklabels={Przeznaczenie},
-      ytick=data,
-      %nodes near coords, nodes near coords align={horizontal},
-      stack plots=x,
-      xmin=0,
-    ]
-      \addplot[fill=fourth!30!white, bar shift=0pt] coordinates {(20,1)};
-      \addplot[fill=main!30!white, bar shift=0pt] coordinates {(7,1)};
-      \addplot[fill=second!30!white, bar shift=0pt] coordinates {(15,1)};
-      \addplot[fill=third!30!white, bar shift=0pt] coordinates {(15,1)};
-      \legend{Brak danych,Brak głosu,Pocztowska Anna, Gawlik Filip};
-    \end{axis}
-  \end{tikzpicture}
-\end{center}
+\classplot{Klasy Matematyczno-Geograficzno-Angielskie}{78}{95}{24}{22}
 
 \subsubsection{Klasyk}
 
-\begin{center}
-  \pgfplotsset{width=7cm,compat=1.15}
+\classplot{Klasy Klasyczne}{78}{95}{24}{22}
 
-  \begin{tikzpicture}
-    \begin{axis}[
-      title=Klasy Klasyczne,
-      xbar,
-      width=14cm, height=3cm, enlarge y limits=0.5,
-      legend style={at={(0.5,-0.90)},anchor=north,legend columns=-1},
-      axis on top,
-      xlabel={Głosy},
-      yticklabels={Przeznaczenie},
-      ytick=data,
-      %nodes near coords, nodes near coords align={horizontal},
-      stack plots=x,
-      xmin=0,
-    ]
-      \addplot[fill=fourth!30!white, bar shift=0pt] coordinates {(20,1)};
-      \addplot[fill=main!30!white, bar shift=0pt] coordinates {(7,1)};
-      \addplot[fill=second!30!white, bar shift=0pt] coordinates {(15,1)};
-      \addplot[fill=third!30!white, bar shift=0pt] coordinates {(15,1)};
-      \legend{Brak danych,Brak głosu,Pocztowska Anna, Gawlik Filip};
-    \end{axis}
-  \end{tikzpicture}
-\end{center}
 \vfill
 \begin{center}
   \LARGE \scshape \textcolor{white!30!black}{celowo pozostawione puste}
@@ -152,119 +84,22 @@
 
 \subsubsection{Klasy pierwsze}
 
-
-\begin{center}
-  \pgfplotsset{width=7cm,compat=1.15}
-
-  \begin{tikzpicture}
-    \begin{axis}[
-      title=Klasy pierwsze,
-      xbar,
-      width=14cm, height=3cm, enlarge y limits=0.5,
-      legend style={at={(0.5,-0.90)},anchor=north,legend columns=-1},
-      axis on top,
-      xlabel={Głosy},
-      yticklabels={Przeznaczenie},
-      ytick=data,
-      %nodes near coords, nodes near coords align={horizontal},
-      stack plots=x,
-      xmin=0,
-    ]
-      \addplot[fill=fourth!30!white, bar shift=0pt] coordinates {(20,1)};
-      \addplot[fill=main!30!white, bar shift=0pt] coordinates {(7,1)};
-      \addplot[fill=second!30!white, bar shift=0pt] coordinates {(15,1)};
-      \addplot[fill=third!30!white, bar shift=0pt] coordinates {(15,1)};
-      \legend{Brak danych,Brak głosu,Pocztowska Anna, Gawlik Filip};
-    \end{axis}
-  \end{tikzpicture}
-\end{center}
+\yearplot{Klasy pierwsze}{20}{7}{15}{15}
 
 \subsubsection{Klasy drugie po szkole podstawowej}
 
 
-\begin{center}
-  \pgfplotsset{width=7cm,compat=1.15}
-
-  \begin{tikzpicture}
-    \begin{axis}[
-      title=Klasy drugie,
-      xbar,
-      width=14cm, height=3cm, enlarge y limits=0.5,
-      legend style={at={(0.5,-0.90)},anchor=north,legend columns=-1},
-      axis on top,
-      xlabel={Głosy},
-      yticklabels={Przeznaczenie},
-      ytick=data,
-      %nodes near coords, nodes near coords align={horizontal},
-      stack plots=x,
-      xmin=0,
-    ]
-      \addplot[fill=fourth!30!white, bar shift=0pt] coordinates {(20,1)};
-      \addplot[fill=main!30!white, bar shift=0pt] coordinates {(7,1)};
-      \addplot[fill=second!30!white, bar shift=0pt] coordinates {(15,1)};
-      \addplot[fill=third!30!white, bar shift=0pt] coordinates {(15,1)};
-      \legend{Brak danych,Brak głosu,Pocztowska Anna, Gawlik Filip};
-    \end{axis}
-  \end{tikzpicture}
-\end{center}
+\yearplot{Klasy drugie}{20}{7}{15}{15}
 
 \subsubsection{Klasy drugie po gimnazjum}
 
 
-\begin{center}
-  \pgfplotsset{width=7cm,compat=1.15}
-
-  \begin{tikzpicture}
-    \begin{axis}[
-      title=Klasy drugie G,
-      xbar,
-      width=14cm, height=3cm, enlarge y limits=0.5,
-      legend style={at={(0.5,-0.90)},anchor=north,legend columns=-1},
-      axis on top,
-      xlabel={Głosy},
-      yticklabels={Przeznaczenie},
-      ytick=data,
-      %nodes near coords, nodes near coords align={horizontal},
-      stack plots=x,
-      xmin=0,
-    ]
-      \addplot[fill=fourth!30!white, bar shift=0pt] coordinates {(20,1)};
-      \addplot[fill=main!30!white, bar shift=0pt] coordinates {(7,1)};
-      \addplot[fill=second!30!white, bar shift=0pt] coordinates {(15,1)};
-      \addplot[fill=third!30!white, bar shift=0pt] coordinates {(15,1)};
-      \legend{Brak danych,Brak głosu,Pocztowska Anna, Gawlik Filip};
-    \end{axis}
-  \end{tikzpicture}
-\end{center}
+\yearplot{Klasy drugie G}{20}{7}{15}{15}
 
 \subsubsection{Klasy trzecie}
 
 
-\begin{center}
-  \pgfplotsset{width=7cm,compat=1.15}
-
-  \begin{tikzpicture}
-    \begin{axis}[
-      title=Klasy trzecie,
-      xbar,
-      width=14cm, height=3cm, enlarge y limits=0.5,
-      legend style={at={(0.5,-0.90)},anchor=north,legend columns=-1},
-      axis on top,
-      xlabel={Głosy},
-      yticklabels={Przeznaczenie},
-      ytick=data,
-      %nodes near coords, nodes near coords align={horizontal},
-      stack plots=x,
-      xmin=0,
-    ]
-      \addplot[fill=fourth!30!white, bar shift=0pt] coordinates {(20,1)};
-      \addplot[fill=main!30!white, bar shift=0pt] coordinates {(7,1)};
-      \addplot[fill=second!30!white, bar shift=0pt] coordinates {(15,1)};
-      \addplot[fill=third!30!white, bar shift=0pt] coordinates {(15,1)};
-      \legend{Brak danych,Brak głosu,Pocztowska Anna, Gawlik Filip};
-    \end{axis}
-  \end{tikzpicture}
-\end{center}
+\yearplot{Klasy trzecie}{20}{7}{15}{15}
 
 \clearpage
 
